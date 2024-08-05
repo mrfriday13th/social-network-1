@@ -23,10 +23,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "infor_user")
-public class InforUser {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+public class InforUser extends AbstractEntity {
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	private Long id;
 
 	@Column(name = "first_name")
 	private String firstName;
@@ -46,11 +46,11 @@ public class InforUser {
 	@Column(name="gender")
 	private boolean gender;
 	
-    @Column(name = "created_at")
-    private Timestamp createdAt;
-
-    @Column(name = "updated_at")
-    private Timestamp updatedAt;
+//    @Column(name = "created_at")
+//    private Timestamp createdAt;
+//
+//    @Column(name = "updated_at")
+//    private Timestamp updatedAt;
     
     @OneToOne
     @JoinColumn(name = "user_id")

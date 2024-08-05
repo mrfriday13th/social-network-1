@@ -22,18 +22,21 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name="comments")
-public class Comment  {
+public class Comment extends AbstractEntity {
 
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int Id;
+//    @Id
+//    @Column(name = "id")
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    private int Id;
+//
+//    @Column(name = "created_at")
+//    private Timestamp createdAt;
+//
+//    @Column(name = "updated_at")
+//    private Timestamp updatedAt;
 
-    @Column(name = "created_at")
-    private Timestamp createdAt;
-
-    @Column(name = "updated_at")
-    private Timestamp updatedAt;
+    @Column(name = "content")
+    private  String content;
     
     @ManyToOne
     @JoinColumn(name = "post_id")

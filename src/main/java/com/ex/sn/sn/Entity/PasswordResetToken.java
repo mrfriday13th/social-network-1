@@ -25,7 +25,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "password_reset_tokens")
-public class PasswordResetToken {
+public class PasswordResetToken implements Serializable  {
+
+	static final long serialVersionUID = -8308103083764632795L;
+
 	@Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)

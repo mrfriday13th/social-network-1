@@ -24,21 +24,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "avatar_user")
-public class AvatarUser {
-	@Id
-	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id ;
-	
+public class AvatarUser extends AbstractEntity {
+
 	@Column(name="url_image")
 	private String urlImage ;
 
-	@Column(name = "created_at")
-    private Timestamp createdAt;
-
-	@Column(name = "is_soft_deleted")
-	private Boolean isSoftDeleted ;
-	
 	@ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

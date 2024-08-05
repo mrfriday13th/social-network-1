@@ -26,17 +26,17 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "file_uploads")
-public class FileUpload {
-	@Id
-	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+public class FileUpload extends AbstractEntity {
+//	@Id
+//	@Column(name = "id")
+//	@GeneratedValue(strategy = GenerationType.AUTO)
+//	private Long id;
 
 	@Column(name = "url_file")
 	private String urlFile;
 
-	@Column(name = "created_at")
-	private Timestamp createdAt;
+//	@Column(name = "created_at")
+//	private Timestamp createdAt;
 
 	@ManyToOne
 	@JoinColumn(name = "user_id")

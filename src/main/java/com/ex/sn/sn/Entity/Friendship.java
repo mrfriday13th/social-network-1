@@ -24,35 +24,25 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name="friendships")
-public class Friendship {
+public class Friendship extends AbstractEntity {
     
 	public enum Status {
 		PENDING,
 		ACCEPTED,
 		REJECTED
 	}
-	
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+
     
-    @Column(name = "requester_id")
-    private int requesterId;
+    @Column(name = "request_user_id")
+    private int requestUserId;
     
-    @Column(name = "addressee_id")
-    private int addresseeId;
+    @Column(name = "address_user_id")
+    private int addressUserId;
     
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private Status status;
-    
-    @Column(name = "created_at")
-    private Timestamp createdAt;
 
-    @Column(name = "updated_at")
-    private Timestamp updatedAt;
-    
     @OneToOne
     @JoinColumn(name = "user_id")
     private User user;

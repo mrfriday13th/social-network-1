@@ -17,16 +17,13 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name="posts")
-public class Post {
+public class Post extends AbstractEntity {
     public enum Status{
     	PUBLIC,
     	PRIVATE
     }
 	
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+
 
     @Column(name = "content")
     private String content;
@@ -38,15 +35,15 @@ public class Post {
     @Column(name = "status")
     private Status status;
 
-    @Column(name = "is_soft_deleted")
-    private Boolean isSoftDeleted;
-
-    @Column(name = "created_at")
-    private Timestamp createdAt;
-
-    @Column(name = "updated_at")
-    private Timestamp updatedAt;
-    
+//    @Column(name = "is_soft_deleted")
+//    private Boolean isSoftDeleted;
+//
+//    @Column(name = "created_at")
+//    private Timestamp createdAt;
+//
+//    @Column(name = "updated_at")
+//    private Timestamp updatedAt;
+//
     @ManyToOne
     @JoinColumn(name="user_id")
     private User user;

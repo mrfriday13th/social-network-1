@@ -23,12 +23,12 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "reactions")
-public class Reaction {
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    
+public class Reaction extends AbstractEntity {
+//    @Id
+//    @Column(name = "id")
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    private Long id;
+//
     @ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
@@ -41,9 +41,9 @@ public class Reaction {
 	@JoinColumn(name = "comment_id")
 	private Comment comment;
     
-    @Column(name = "created_at")
-    private Timestamp createdAt;
-
-    @Column(name = "updated_at")
-    private Timestamp updatedAt;
+//    @Column(name = "created_at")
+//    private Timestamp createdAt;
+//
+//    @Column(name = "updated_at")
+//    private Timestamp updatedAt;
 }

@@ -27,12 +27,12 @@ import jakarta.persistence.GenerationType;
 @Entity
 @EnableAutoConfiguration
 @Table(name = "users")
-public class User {
-    
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class User extends AbstractEntity {
+//
+//    @Id
+//    @Column(name = "id")
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    private Long id;
  
     @Column(name = "username")
     private String username;
@@ -46,11 +46,11 @@ public class User {
     @Column(name = "cunrrent_avatar_id")
     private String cunrrentAvatarId;
       
-    @Column(name = "created_at")
-    private Timestamp createdAt;
-
-    @Column(name = "updated_at")
-    private Timestamp updatedAt;
+//    @Column(name = "created_at")
+//    private Timestamp createdAt;
+//
+//    @Column(name = "updated_at")
+//    private Timestamp updatedAt;
     
     ////////////relationship///////////
     
