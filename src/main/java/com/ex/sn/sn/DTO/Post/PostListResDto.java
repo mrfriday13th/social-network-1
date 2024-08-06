@@ -1,0 +1,17 @@
+package com.ex.sn.sn.DTO.Post;
+
+
+import org.springframework.data.domain.Page;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+
+@Getter
+@AllArgsConstructor
+@Builder
+public class PostListResDto {
+
+    private Page<PostPostResDto> listPost;
+}
+
