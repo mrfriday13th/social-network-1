@@ -15,6 +15,6 @@ public class FileResDto {
 
     private long id;
 
-    private String linkImage;
+    private String linkFile;
 }
 
