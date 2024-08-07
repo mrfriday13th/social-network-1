@@ -2,7 +2,7 @@ package com.ex.sn.sn.Service;
 
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public interface OTPService {
 
     public int generateOTP(String email);

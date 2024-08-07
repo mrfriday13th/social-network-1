@@ -1,7 +1,7 @@
 package com.ex.sn.sn.Service.Impl;
 
 import com.ex.sn.sn.DTO.Auth.*;
-import com.ex.sn.sn.DTO.User.UserSigupResDto;
+import com.ex.sn.sn.DTO.User.UserSignupResDto;
 import com.ex.sn.sn.Entity.PasswordResetToken;
 import com.ex.sn.sn.Entity.User;
 import com.ex.sn.sn.Exception.AppException;
@@ -35,7 +35,7 @@ public class AuthServiceImpl implements AuthService {
 
 
     @Override
-    public UserSigupResDto insertUser(RegistUserRepDto reqDto){
+    public UserSignupResDto insertUser(RegistUserRepDto reqDto){
         //ma hoa password
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         reqDto.setPassword(encoder.encode(reqDto.getPassword()));
@@ -48,7 +48,7 @@ public class AuthServiceImpl implements AuthService {
             throw new AppException(ErrorCode.USER_EXISTED);
         }
         userRepository.save(user);
-        return modelMapper.map(user, UserSigupResDto.class);
+        return modelMapper.map(user, UserSignupResDto.class);
     }
 
     @Override
