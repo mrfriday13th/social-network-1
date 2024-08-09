@@ -33,7 +33,7 @@ public class Post extends AbstractEntity {
     
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
-    private Status status;
+    private Status status = Status.PUBLIC;
 
 //    @Column(name = "is_soft_deleted")
 //    private Boolean isSoftDeleted;

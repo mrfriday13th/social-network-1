@@ -26,7 +26,7 @@ public abstract class AbstractEntity {
 
     @Column(updatable = false)
     @CreationTimestamp
-    private LocalDateTime createdDate;
+    private LocalDateTime createdAt;
 
     @Column(updatable = true)
     @UpdateTimestamp(source = SourceType.DB)

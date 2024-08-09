@@ -33,15 +33,12 @@ public class Friendship extends AbstractEntity {
 	}
 
     
-    @Column(name = "request_user_id")
-    private int requestUserId;
-    
     @Column(name = "address_user_id")
     private int addressUserId;
     
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
-    private Status status;
+    private Status status = Status.PENDING;
 
     @OneToOne
     @JoinColumn(name = "user_id")
