@@ -47,7 +47,7 @@ public class AuthController {
 	@ApiResponse(responseCode = "200", description = "signin succesfully")
 	@ApiResponse(responseCode = "401", description = "signin unsuccesfully")
 	public BaseResponse<OtpResDto> generateOtp(@RequestBody @Valid OtpReqDto reqDto) {
-		OtpResDto restDto = service.generaterOpt(reqDto);
+		OtpResDto restDto = service.generateOTP(reqDto);
 		return BaseResponse.<OtpResDto>builder().result(restDto).message(CommonConstants.GENERATE_OTP_SUCCESS).build();
 	}
     
@@ -56,7 +56,7 @@ public class AuthController {
 	@ApiResponse(responseCode = "200", description = "OTP is valid")
 	@ApiResponse(responseCode = "401", description = "OTP invalid")
 	public BaseResponse<OtpGetResDto> authenticate(@RequestBody @Valid OtpGetReqDto reqDto) {
-		OtpGetResDto restDto = service.validateOtp(reqDto);
+		OtpGetResDto restDto = service.validateOTP(reqDto);
 		return BaseResponse.<OtpGetResDto>builder().result(restDto).message(CommonConstants.SIGN_UP_SUCCESS).build();
 	}
 
