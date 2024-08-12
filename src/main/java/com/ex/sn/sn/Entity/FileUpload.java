@@ -28,6 +28,11 @@ import lombok.Setter;
 @Table(name = "file_uploads")
 public class FileUpload extends AbstractEntity {
 
+	@OneToOne
+	@JoinColumn(name = "comment_id")
+	@JsonManagedReference
+	private Comment comment;
+
 	@Column(name = "url_file")
 	private String urlFile;
 

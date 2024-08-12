@@ -13,6 +13,6 @@ public interface PostService {
     PostPostResDto getPostDetail(Long Id);
     Page<PostPostResDto> getUserAllPost(Long id, Integer pageNo);
     Page<PostPostResDto> getAllPostByKeyword(Integer pageNo, String searchContent);
-    PostPostResDto updatePrivacy(Long postId, PostStatusPutReqDto reqDto);
+    PostPostResDto updateStatus(Long postId, PostStatusPutReqDto reqDto);
     boolean checkRightAccessPost(Post post, User user);
 }

@@ -97,7 +97,7 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public OtpResDto generaterOpt(OtpReqDto reqDto) {
+    public OtpResDto generateOTP(OtpReqDto reqDto) {
         OtpResDto restDto = new OtpResDto();
         try {
             Authentication authentication = authenticationManager
@@ -115,7 +115,7 @@ public class AuthServiceImpl implements AuthService {
         return restDto;
     }
     @Override
-    public OtpGetResDto validateOtp(OtpGetReqDto reqDto) {
+    public OtpGetResDto validateOTP(OtpGetReqDto reqDto) {
         OtpGetResDto resDto = new OtpGetResDto();
         int serverOtp = otpService.getOtp(reqDto.getUserName());
         if (serverOtp > 0) {
